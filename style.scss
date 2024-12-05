@@ -1,0 +1,273 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+
+// *variables*
+$mainbg: #0d192b;
+$cardbg: #14253d;
+$line: #2f415b;
+$white: #ffffff;
+
+$soft-blue: #8bacda;
+$cyan: #00fff7;
+
+$weight300: 300;
+$weight400: 400;
+$weight600: 600;
+
+// *css reset*
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+body {
+  /* 3. Add accessible line-height */
+  line-height: 1.5;
+  /* 4. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 5. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 6. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 7. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 8. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+body {
+  font-size: 18px;
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  background-color: $mainbg;
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+
+  main {
+    background-color: $cardbg;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 35vw;
+    height: max-content;
+    border-radius: 10px;
+    padding: 1rem 2rem 2rem;
+    gap: 2vh;
+    //     .equi-img {
+    //         flex-basis: 40%;
+    //         width: 100%;
+    //         height: 100%;
+    //         display: inline-flex;
+    //         justify-content: center;
+    //         border-radius: 10px;
+    // position: relative;
+    // &::after {
+    //     content: "";
+    //     position: absolute;
+    //     top: 0;
+    //     left: 0;
+    //     width: 100%;
+    //     height: 100%;
+    //     background-image: url('./images/icon-view.svg');
+    //     background-size: cover;
+    //     background-position: center;
+    //     background-repeat: no-repeat;
+    //     background-color: $cyan;
+    //     mix-blend-mode: multiply;
+
+    //     border-radius: 10px;
+    //     opacity: 0;
+    //     transition: opacity 0.3s ease-in-out;
+    //   }
+
+    //   &:hover::after {
+    //     opacity: 1; // Makes the overlay image visible on hover
+    //   }      img {
+    //         border-radius: 10px;
+    //       }
+    //     }
+
+    .equi-img {
+      position: relative;
+      flex-basis: 45%;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 10px;
+      overflow: hidden;
+      cursor: pointer;
+
+      img {
+        width: 100%;
+        border-radius: 10px;
+        transition: transform 0.3s ease-in-out;
+      }
+
+      &:hover img {
+        transform: scale(1.1);
+      }
+
+      &::after {
+        content: url("./images/icon-view.svg");
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 255, 255, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+      }
+
+      &:hover::after {
+        opacity: 1;
+      }
+    }
+
+    .content {
+      flex-basis: 55%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: flex-start;
+      gap: 2vh;
+      .title {
+        color: $white;
+        font-weight: $weight600;
+        
+
+        &:hover {
+          color: $cyan;
+          transition: 300ms ease-in-out;
+          cursor: pointer;
+        }
+      }
+      .description {
+        color: $soft-blue;
+        font-weight: $weight300;
+      }
+      section {
+        display: flex;
+        justify-content: flex-start;
+        width: 100%;
+        .eth {
+          color: $cyan;
+          &::before {
+            content: url(./images/icon-ethereum.svg);
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 1vw;
+          }
+        }
+        .days-left {
+          color: $soft-blue;
+          margin-left: auto;
+
+          &::before {
+            content: url(./images/icon-clock.svg);
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 1vw;
+          }
+        }
+      }
+      hr {
+        width: 100%;
+        border: 1px solid $line;
+        margin: 2.5vh 0;
+      }
+      .creation {
+        color: $soft-blue;
+        &::before {
+          content: "";
+          display: inline-block;
+          width: 50px;
+          height: 50px;
+          margin-right: 1vw;
+          background-image: url(./images/image-avatar.png);
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+          vertical-align: middle;
+          object-fit: cover;
+          border: 2px solid $white;
+          border-radius: 100%;
+        }
+        span {
+          color: $white;
+
+          &:hover {
+            color: $cyan;
+            transition: 300ms ease-in-out;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  body{
+    main{
+      width: 93vw;
+      .equi-img{
+        flex-basis: 40%;
+      }
+      .content{
+        flex-basis: 60%;
+      }
+    }
+  }
+}
